@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> solve(int input_Array[],  int input_length) {
+   
+    vector<int>ans;
+    int sum=0;
+    for (int i = 0; i < input_length; i++) {
+        sum+=input_Array[i];
+        if(sum!=0)
+        ans.push_back(input_Array[i]);
+        else
+        sum=0;
+    }
+    return ans;
+    
+}
+
+int main() {
+    int input_Array[] = {1, 2, -3, 3, 1};
+   
+    int input_length = sizeof(input_Array) / sizeof(input_Array[0]);
+    
+    vector<int> ans = solve(input_Array, input_length);
+
+   for(auto e:ans)
+   cout<<e<<" ";
+
+   cout<<endl;
+
+    return 0;
+}
